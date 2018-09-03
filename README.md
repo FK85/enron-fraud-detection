@@ -21,22 +21,26 @@ I created two new features called “fraction from poi” and “fraction to poi
 
 ### Feature Selection: 
 I used a few different methods:
-1. Feature importance with decision tree and SelectKBest. I would get slightly different results for the most important features, every time I would run these. But after running it for a few times, I selected total payments, total stock value, salary, bonus, fraction of from poi and fraction to poi
+#### Feature importance with decision tree and SelectKBest
+I would get slightly different results for the most important features, every time I would run these. But after running it for a few times, I selected total payments, total stock value, salary, bonus, fraction of from poi and fraction to poi
 
 SelectKBest top 10 features:
 * salary : 7.27284675502
-#### exercised_stock_options : 2.45275656248
-#### bonus : 1.00812937457
-#### total_stock_value : 2.60223651157
-#### expenses : 3.32526780709
-director_fees : 1.47749163845
-deferred_income : 6.04514230639
-long_term_incentive : 1.55849643548
-fraction_from_poi : 3.78748434002
-fraction_to_poi : 14.4638148346
+* exercised_stock_options : 2.45275656248
+* bonus : 1.00812937457
+* total_stock_value : 2.60223651157
+* expenses : 3.32526780709
+* director_fees : 1.47749163845
+* deferred_income : 6.04514230639
+* long_term_incentive : 1.55849643548
+* fraction_from_poi : 3.78748434002
+* fraction_to_poi : 14.4638148346
 
-2. Using SelectKBest in conjunction with GridSearchCV using pipeline: 7 features were selected as part of this. I used these to assess the performance. But the performance was lower as compared to my manual feature selection (I have shown the numbers at the end of this document). So, I decided to stick to my manual feature selection listed in the 1st method and commented out this block of code.
-Feature Scaling: Since the financial features can have different numeric ranges, a feature with higher range can dominate the prediction model. So, I applied MinMax scaling to total payments, total stock value, salary and bonus (Fraction from/to poi was already scaled).
+#### Using SelectKBest in conjunction with GridSearchCV using pipeline
+7 features were selected as part of this. I used these to assess the performance. But the performance was lower as compared to my manual feature selection (I have shown the numbers at the end of this document). So, I decided to stick to my manual feature selection listed in the 1st method and commented out this block of code.
+
+#### Feature Scaling
+Since the financial features can have different numeric ranges, a feature with higher range can dominate the prediction model. So, I applied MinMax scaling to total payments, total stock value, salary and bonus (Fraction from/to poi was already scaled).
 
 ## Algorithm Selection: 
 I ended up using Decision Tree algorithm as it was the only algorithm having a precision and recall score higher than 0.3. I also tried Gaussian Naive Bayes and Support Vector Machine.
@@ -65,14 +69,14 @@ It is a percentage of true positive out of all actual positive results, which in
 
 I also tried to change the features to see the impact on performance, the performance was worse than 6 features
 ### 4 Features (total payments, total stock value, salary, bonus)
-o Accuracy: 0.84
-o Precision: 0.24
-o Recall: 0.048
+* Accuracy: 0.84
+* Precision: 0.24
+* Recall: 0.048
 ### 2 Features (total payments, total stock value)
-o Accuracy: 0.80
-o Precision: 0.09
-o Recall: 0.04
+* Accuracy: 0.80
+* Precision: 0.09
+* Recall: 0.04
 ### Feature Selection using SelectKBest with GridSearchCV (k = 7 was auto-selected):
-o Accuracy:0.79
-o Precision: 0.33
-o Recall: 0.125
+* Accuracy:0.79
+* Precision: 0.33
+* Recall: 0.125
