@@ -24,11 +24,11 @@ I used a few different methods:
 1. Feature importance with decision tree and SelectKBest. I would get slightly different results for the most important features, every time I would run these. But after running it for a few times, I selected total payments, total stock value, salary, bonus, fraction of from poi and fraction to poi
 
 SelectKBest top 10 features:
-salary : 7.27284675502
-exercised_stock_options : 2.45275656248
-bonus : 1.00812937457
-total_stock_value : 2.60223651157
-expenses : 3.32526780709
+* salary : 7.27284675502
+#### exercised_stock_options : 2.45275656248
+#### bonus : 1.00812937457
+#### total_stock_value : 2.60223651157
+#### expenses : 3.32526780709
 director_fees : 1.47749163845
 deferred_income : 6.04514230639
 long_term_incentive : 1.55849643548
