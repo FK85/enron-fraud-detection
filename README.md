@@ -8,6 +8,9 @@ The goal of the project is to identify Enron Employees who may have committed fr
 ### Why machine learning: 
 Since this problem involves prediction of new data into two classes (poi and non-poi), a two-class machine learning classifier algorithm can be used to create a prediction model
 
+### Main file:
+poi_id is the main python file. Supporting files are feature_format and tester.
+
 ### Outliers: 
 The “TOTAL” record is an obvious outlier that was removed. Other than that, I removed “THE TRAVEL AGENCY IN THE PARK” as it is not an employee. In addition, I found 1 outlier where all values were either NaN or 0. (LOCKHART EUGENE E). I also removed 3 more outliers by filtering out the top 1 percentile values for total payments and total stock values.
 
